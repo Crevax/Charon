@@ -1,0 +1,7 @@
+crevax_dossier_homepage:
+    pattern:  /profile/
+    defaults: { _controller: CrevaxDossierBundle:Dossier:index }
+
+crevax_dossier_pinterest:
+    pattern: /pinterest
+    defaults: { _controller: CrevaxDossierBundle:Dossier:pinterest }

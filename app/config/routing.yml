@@ -1,0 +1,15 @@
+crevax_portfolio:
+    resource: "@CrevaxPortfolioBundle/Resources/config/routing.yml"
+    prefix:   /
+
+crevax_dossier:
+    resource: "@CrevaxDossierBundle/Resources/config/routing.yml"
+    prefix:   /
+
+crevax_site:
+    resource: "@CrevaxSiteBundle/Resources/config/routing.yml"
+    prefix:   /
+
+crevax_user:
+    resource: "@CrevaxUserBundle/Resources/config/routing.yml"
+    prefix:   /

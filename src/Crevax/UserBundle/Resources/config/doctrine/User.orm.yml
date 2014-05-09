@@ -1,0 +1,11 @@
+Crevax\UserBundle\Entity\User:
+    type: entity
+    table: keghound_users
+    repositoryClass: Crevax\UserBundle\Entity\UserRepository
+    fields:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    lifecycleCallbacks: {  }

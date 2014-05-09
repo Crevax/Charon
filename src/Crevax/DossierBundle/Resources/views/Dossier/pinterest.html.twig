@@ -1,0 +1,10 @@
+{% extends '::base.html.twig' %}
+
+{% block title %}Pinterest{% endblock %}
+
+{% block body %}
+<h1>My Pins</h1>
+<a data-pin-do="embedUser" href="http://www.pinterest.com/crevax/" data-pin-scale-width="115" data-pin-scale-height="600" data-pin-board-width="970"></a>
+<!-- Please call pinit.js only once per page -->
+<script type="text/javascript" async src="//assets.pinterest.com/js/pinit.js"></script>
+{% endblock %}

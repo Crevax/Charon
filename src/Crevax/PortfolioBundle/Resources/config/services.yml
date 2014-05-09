@@ -1,0 +1,7 @@
+parameters:
+#    crevax_portfolio.example.class: Crevax\PortfolioBundle\Example
+
+services:
+#    crevax_portfolio.example:
+#        class: %crevax_portfolio.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]
