@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 Symfony Standard Edition
 ========================
 
@@ -169,3 +170,9 @@ Enjoy!
 [11]: http://symfony.com/doc/2.3/cookbook/logging/monolog.html
 [12]: http://symfony.com/doc/2.3/cookbook/assetic/asset_management.html
 [13]: http://symfony.com/doc/2.3/bundles/SensioGeneratorBundle/index.html
+=======
+Elysium
+=======
+
+The code for my personal website.
+>>>>>>> 81fc8c9bb9896c0ba7edf27ba2c6a71761f2c10c
