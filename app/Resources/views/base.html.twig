@@ -28,15 +28,17 @@
               <div class="collapse navbar-collapse">
                 <ul class="nav navbar-nav">
                   <li><a href="{{ path('crevax_site_homepage') }}">Home</a></li>
+                  <li><a href="{{ path('crevax_library_homepage') }}">Library</a></li>
                   {#<li><a href="#">Blog</a></li>
-                  <li><a href="#">Portfolio</a></li>#}
+                  <li><a href="#">Portfolio</a></li>
+                  <li><a href="#">About Me</a></li>#}
                 </ul>
+                {% if app.user is not null %}
                 <ul class="nav navbar-nav pull-right" role="user">
-                    {% if app.user is not null %}
                     <li><a href="{{ path('fos_user_profile_show') }}">{{ app.user.username }}</a></li>
                     <li><a href="{{ path('fos_user_security_logout') }}">Logout</a></li>
-                    {% endif %}
                 </ul>
+                {% endif %}
               </div><!--/.nav-collapse -->
             </div>
           </div>
