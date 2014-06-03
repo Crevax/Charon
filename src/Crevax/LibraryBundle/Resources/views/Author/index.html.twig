@@ -3,8 +3,10 @@
 {% block title %}My Library{% endblock %}
 
 {% block body %}
-    <h1>Reading is good!</h1>
-    <p><a href="{{ path('crevax_library_author_index') }}">Authors</a>
+    <h1>Authors</h1>
+    {% if app.user is not null %}
+    <p><a href="{{ path('crevax_library_author_index') }}">Add Author</a>
+    {% endif %}
 {% endblock %}
 
 {% block javascripts %}
