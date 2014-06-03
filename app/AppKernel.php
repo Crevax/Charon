@@ -22,6 +22,7 @@ class AppKernel extends Kernel
             new Crevax\SiteBundle\CrevaxSiteBundle(),
             new Crevax\DossierBundle\CrevaxDossierBundle(),
             new Crevax\PortfolioBundle\CrevaxPortfolioBundle(),
+            new Crevax\LibraryBundle\CrevaxLibraryBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

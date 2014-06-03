@@ -1,0 +1,7 @@
+parameters:
+#    crevax_library.example.class: Crevax\LibraryBundle\Example
+
+services:
+#    crevax_library.example:
+#        class: %crevax_library.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

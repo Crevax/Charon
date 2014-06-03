@@ -1,0 +1,3 @@
+crevax_library_homepage:
+    pattern:  /
+    defaults: { _controller: CrevaxLibraryBundle:Library:index }
