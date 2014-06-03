@@ -1,6 +1,6 @@
 Crevax\UserBundle\Entity\User:
     type: entity
-    table: keghound_users
+    table: users
     repositoryClass: Crevax\UserBundle\Entity\UserRepository
     fields:
         id:
