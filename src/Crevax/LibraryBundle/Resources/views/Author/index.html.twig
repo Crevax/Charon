@@ -1,11 +1,20 @@
 {% extends '::base.html.twig' %}
 
-{% block title %}My Library{% endblock %}
+{% block title %}Authors{% endblock %}
 
 {% block body %}
     <h1>Authors</h1>
+    {% if authors %}
+    <ul>
+      {% for author in authors %}
+      <li>{{ author.firstName }} {{ author.lastName }}</li>
+      {% endfor %}
+    </ul>
+    {% else %}
+    <p>No authors have been added to the library yet.</p>
+    {% endif %}
     {% if app.user is not null %}
-    <p><a href="{{ path('crevax_library_author_index') }}">Add Author</a>
+    <p><a href="{{ path('crevax_library_author_new') }}">Add Author</a>
     {% endif %}
 {% endblock %}
 

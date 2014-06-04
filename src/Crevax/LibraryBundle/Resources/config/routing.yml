@@ -5,3 +5,7 @@ crevax_library_homepage:
 crevax_library_author_index:
   pattern:  /authors
   defaults: { _controller: CrevaxLibraryBundle:Author:index }
+
+crevax_library_author_new:
+  pattern:  /authors/new
+  defaults: { _controller: CrevaxLibraryBundle:Author:new }

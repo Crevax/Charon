@@ -4,6 +4,7 @@
 namespace Crevax\LibraryBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /** 
  * @ORM\Entity
@@ -20,11 +21,25 @@ class Author
 
   /**
    * @ORM\Column(type="string", length=255)
+   * @Assert\NotBlank()
+   * @Assert\Length(
+   *      min = "2",
+   *      max = "255",
+   *      minMessage = "Author first name must be at least {{ limit }} characters length",
+   *      maxMessage = "Author first name cannot be longer than {{ limit }} characters length"
+   * )   
    */
   protected $first_name;
 
   /**
    * @ORM\Column(type="string", length=255)
+   * @Assert\NotBlank()
+   * @Assert\Length(
+   *      min = "2",
+   *      max = "255",
+   *      minMessage = "Author last name must be at least {{ limit }} characters length",
+   *      maxMessage = "Author last name cannot be longer than {{ limit }} characters length"
+   * )     
    */
   protected $last_name;
 
