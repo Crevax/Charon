@@ -9,3 +9,11 @@ crevax_library_author_index:
 crevax_library_author_new:
   pattern:  /authors/new
   defaults: { _controller: CrevaxLibraryBundle:Author:new }
+
+crevax_library_book_index:
+  pattern:  /books
+  defaults: { _controller: CrevaxLibraryBundle:Book:index }
+
+crevax_library_book_new:
+  pattern:  /books/new
+  defaults: { _controller: CrevaxLibraryBundle:Book:new }

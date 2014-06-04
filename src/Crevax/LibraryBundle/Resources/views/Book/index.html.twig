@@ -1,0 +1,23 @@
+{% extends '::base.html.twig' %}
+
+{% block title %}Books{% endblock %}
+
+{% block body %}
+    <h1>Books</h1>
+    {% if books %}
+    <ul>
+      {% for book in books %}
+      <li><em>{{ book.title }}</em> by {{ book.author.firstName }} {{ book.author.lastName }}</li>
+      {% endfor %}
+    </ul>
+    {% else %}
+    <p>No books have been added to the library yet.</p>
+    {% endif %}
+    {% if app.user is not null %}
+    <p><a href="{{ path('crevax_library_book_new') }}">Add Book</a>
+    {% endif %}
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+{% endblock %}

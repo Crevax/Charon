@@ -30,3 +30,4 @@ security:
         - { path: ^/resetting, role: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/admin/, role: ROLE_ADMIN }
         - { path: ^/library/authors/new, role: IS_AUTHENTICATED_FULLY }
+        - { path: ^/library/books/new, role: IS_AUTHENTICATED_FULLY }

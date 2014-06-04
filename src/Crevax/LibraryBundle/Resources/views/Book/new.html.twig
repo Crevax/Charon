@@ -1,0 +1,18 @@
+{% extends '::base.html.twig' %}
+
+{% block title %}Add Book{% endblock %}
+
+{% block body %}
+    <h1>Add a Book</h1>
+    {{ form_start(form) }}
+      {{ form_errors(form) }}
+
+      {{ form_row(form.title) }}
+      {{ form_row(form.author) }}
+    {{ form_end(form) }}
+    <p><a href="{{ path('crevax_library_book_index') }}">Back</a>
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+{% endblock %}

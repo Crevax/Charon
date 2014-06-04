@@ -44,6 +44,21 @@ class Author
   protected $last_name;
 
   /**
+   * @ORM\OneToMany(targetEntity="Book", mappedBy="author")
+   */
+  protected $books;
+
+  public function __construct()
+  {
+    $this->books = new ArrayCollection();
+  }
+
+  public function __toString()
+  {
+    return "$this->first_name $this->last_name";
+  }
+
+  /**
    * Get id
    *
    * @return integer 
@@ -97,5 +112,38 @@ class Author
   public function getLastName()
   {
     return $this->last_name;
+  }
+
+  /**
+   * Add books
+   *
+   * @param \Crevax\LibraryBundle\Entity\Book $books
+   * @return Author
+   */
+  public function addBook(\Crevax\LibraryBundle\Entity\Book $books)
+  {
+    $this->books[] = $books;
+    
+    return $this;
+  }
+
+  /**
+   * Remove books
+   *
+   * @param \Crevax\LibraryBundle\Entity\Book $books
+   */
+  public function removeBook(\Crevax\LibraryBundle\Entity\Book $books)
+  {
+    $this->books->removeElement($books);
+  }
+
+  /**
+   * Get books
+   *
+   * @return \Doctrine\Common\Collections\Collection 
+   */
+  public function getBooks()
+  {
+    return $this->books;
   }
 }
