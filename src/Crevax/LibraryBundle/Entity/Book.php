@@ -32,6 +32,11 @@ class Book
   protected $title;
 
   /**
+   * @ORM\Column(type="boolean")
+   */
+  protected $read;
+
+  /**
    * @ORM\ManyToOne(targetEntity="Author", inversedBy="products")
    * @ORM\JoinColumn(name="author_id", referencedColumnName="id", nullable=false)
    * @Assert\NotNull()
@@ -93,5 +98,28 @@ class Book
   public function getAuthor()
   {
     return $this->author;
+  }
+
+  /**
+   * Set read
+   *
+   * @param boolean $read
+   * @return Book
+   */
+  public function setRead($read)
+  {
+    $this->read = $read;
+    
+    return $this;
+  }
+
+  /**
+   * Is read
+   *
+   * @return boolean 
+   */
+  public function isRead()
+  {
+    return $this->read;
   }
 }
