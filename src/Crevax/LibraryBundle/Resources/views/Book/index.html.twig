@@ -4,7 +4,10 @@
 
 {% block body %}
     <h1>Books</h1>
-    {% if books %}
+    {% if pagination %}
+    <div class="count">
+      Total Books: {{ pagination.getTotalItemCount }}
+    </div>
     <table class="table table-striped table-bordered table-condensed">
       <thead>
         <tr>
@@ -14,7 +17,7 @@
         </tr>
       </thead>
       <tbody>
-        {% for book in books %}
+        {% for book in pagination %}
         <tr>
           <td><em>{{ book.title }}</em></td>
           <td>{{ book.author.firstName }} {{ book.author.lastName }}</td>
@@ -23,6 +26,9 @@
         {% endfor %}
       </tbody>
     </table>
+    <div class="navigation">
+      {{ knp_pagination_render(pagination) }}
+    </div>
     {% else %}
     <p>No books have been added to the library yet.</p>
     {% endif %}

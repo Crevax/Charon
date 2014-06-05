@@ -12,12 +12,19 @@ class AuthorController extends Controller
 {
   public function indexAction()
   {
-    $authors = $this->getDoctrine()
-      ->getRepository('CrevaxLibraryBundle:Author')
-      ->findAll();
+    $em    = $this->get('doctrine.orm.entity_manager');
+    $dql   = "SELECT a FROM CrevaxLibraryBundle:Author a";
+    $query = $em->createQuery($dql);
+
+    $paginator  = $this->get('knp_paginator');
+    $pagination = $paginator->paginate(
+        $query,
+        $this->get('request')->query->get('page', 1)/*page number*/,
+        10/*limit per page*/
+    );
 
     return $this->render('CrevaxLibraryBundle:Author:index.html.twig', array(
-      'authors' => $authors
+      'pagination' => $pagination
     ));
   }
 

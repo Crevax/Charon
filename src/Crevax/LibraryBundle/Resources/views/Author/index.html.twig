@@ -4,7 +4,10 @@
 
 {% block body %}
     <h1>Authors</h1>
-    {% if authors %}
+    {% if pagination %}
+    <div class="count">
+      Total Authors: {{ pagination.getTotalItemCount }}
+    </div>
     <table class="table table-striped table-bordered table-condensed">
       <thead>
         <tr>
@@ -12,13 +15,16 @@
         </tr>
       </thead>
       <tbody>
-        {% for author in authors %}
+        {% for author in pagination %}
         <tr>
           <td>{{ author.firstName }} {{ author.lastName }}</td>
         </tr>
         {% endfor %}
       </tbody>
     </table>
+    <div class="navigation">
+      {{ knp_pagination_render(pagination) }}
+    </div>
     {% else %}
     <p>No authors have been added to the library yet.</p>
     {% endif %}

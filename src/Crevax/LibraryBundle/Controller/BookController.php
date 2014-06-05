@@ -12,12 +12,19 @@ class BookController extends Controller
 {
   public function indexAction()
   {
-    $books = $this->getDoctrine()
-      ->getRepository('CrevaxLibraryBundle:Book')
-      ->findAll();
+    $em    = $this->get('doctrine.orm.entity_manager');
+    $dql   = "SELECT b FROM CrevaxLibraryBundle:Book b";
+    $query = $em->createQuery($dql);
+
+    $paginator  = $this->get('knp_paginator');
+    $pagination = $paginator->paginate(
+        $query,
+        $this->get('request')->query->get('page', 1)/*page number*/,
+        10/*limit per page*/
+    );
 
     return $this->render('CrevaxLibraryBundle:Book:index.html.twig', array(
-      'books' => $books
+      'pagination' => $pagination
     ));
   }
 
