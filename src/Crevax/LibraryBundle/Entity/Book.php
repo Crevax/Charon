@@ -32,7 +32,7 @@ class Book
   protected $title;
 
   /**
-   * @ORM\Column(type="boolean")
+   * @ORM\Column(name="was_read", type="boolean")
    */
   protected $read;
 

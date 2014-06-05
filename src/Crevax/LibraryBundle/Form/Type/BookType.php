@@ -13,7 +13,7 @@ class BookType extends AbstractType
     $builder
       ->add('title')
       ->add('author')
-      ->add('read')
+      ->add('read', 'checkbox', array('required' => false))
       ->add('save', 'submit');
   }
 
