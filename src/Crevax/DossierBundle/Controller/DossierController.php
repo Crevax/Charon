@@ -6,7 +6,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
 class DossierController extends Controller
 {
-    public function indexAction($name)
+    public function indexAction()
     {
         return $this->render('CrevaxDossierBundle:Dossier:index.html.twig');
     }

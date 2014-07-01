@@ -1,5 +1,5 @@
 crevax_user_homepage:
-    pattern:  /user
+    pattern:  /
     defaults: { _controller: CrevaxUserBundle:User:index }
 
 fos_user_security:
