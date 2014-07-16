@@ -10,7 +10,7 @@ class UserControllerTest extends WebTestCase
     {
         $client = static::createClient();
 
-        $crawler = $client->request('GET', '/user');
+        $crawler = $client->request('GET', '/user/');
 
         $this->assertTrue($crawler->filter('html:contains("Hello world!")')->count() > 0);
     }

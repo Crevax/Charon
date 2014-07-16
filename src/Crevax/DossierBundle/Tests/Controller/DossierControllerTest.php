@@ -10,8 +10,8 @@ class DossierControllerTest extends WebTestCase
     {
         $client = static::createClient();
 
-        $crawler = $client->request('GET', '/profile');
+        $crawler = $client->request('GET', '/profile/');
 
-        $this->assertTrue($crawler->filter('h1:contains("About Me")')->count() > 0);
+        $this->assertTrue($crawler->filter('html:contains("About Me")')->count() > 0);
     }
 }
