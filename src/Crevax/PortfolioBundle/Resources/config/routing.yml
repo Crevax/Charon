@@ -1,3 +1,3 @@
 crevax_portfolio_homepage:
-    pattern:  /hello/{name}
-    defaults: { _controller: CrevaxPortfolioBundle:Default:index }
+    pattern:  /
+    defaults: { _controller: CrevaxPortfolioBundle:Portfolio:index }
