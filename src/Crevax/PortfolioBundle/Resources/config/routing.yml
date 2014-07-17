@@ -1,3 +1,4 @@
 crevax_portfolio_homepage:
-    pattern:  /
-    defaults: { _controller: CrevaxPortfolioBundle:Portfolio:index }
+  pattern:  /
+  methods: GET
+  defaults: { _controller: CrevaxPortfolioBundle:Portfolio:index }
