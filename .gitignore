@@ -6,3 +6,6 @@ node_modules
 
 # Built Files
 dist
+
+# Logs
+*.log
