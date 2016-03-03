@@ -1,3 +1,0 @@
-crevax_site_homepage:
-    pattern:  /
-    defaults: { _controller: CrevaxSiteBundle:Site:index }

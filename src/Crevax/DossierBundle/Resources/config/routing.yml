@@ -1,9 +1,0 @@
-crevax_dossier_homepage:
-    pattern:  /
-    methods: GET
-    defaults: { _controller: CrevaxDossierBundle:Dossier:index }
-
-crevax_dossier_pinterest:
-    pattern: /pinterest
-    methods: GET
-    defaults: { _controller: CrevaxDossierBundle:Dossier:pinterest }
