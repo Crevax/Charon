@@ -3,7 +3,7 @@ var webpack = require('webpack');
 module.exports = {
   entry: {
     app: './src/js/app.jsx',
-    vendors: ['react', 'react-dom']
+    vendors: ['react', 'react-dom', 'es6-promise-polyfill']
   },
   output: {
     path: './dist/js/',
