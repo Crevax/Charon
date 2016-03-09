@@ -44,7 +44,8 @@
       "react"
     ],
     "rules": {
-      "jsx-quotes": 1,
+      "no-console": 1,
+      "jsx-quotes": [1, "prefer-single"],
       "react/jsx-no-undef": 1,
       "react/jsx-uses-react": 1,
       "react/jsx-uses-vars": 1
