@@ -5,6 +5,7 @@ import { Router, Route, browserHistory, IndexRoute } from 'react-router';
 
 import MainNavigation from './containers/MainNavigation';
 import Home from './pages/Home';
+import Portfolio from './pages/Portfolio';
 
 import store from './store';
 
@@ -13,6 +14,7 @@ render((
     <Router history={browserHistory} >
       <Route path='/' component={MainNavigation} >
         <IndexRoute component={Home} />
+        <Route path='/portfolio' component={Portfolio} />
       </Route>
     </Router>
   </Provider>
