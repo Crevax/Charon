@@ -14,6 +14,7 @@ class MainNavigation extends React.Component {
           <ul>
             <li><Link to='/'>Home</Link></li>
             <li><Link to='/portfolio'>Portfolio</Link></li>
+            <li><Link to='/library'>Library</Link></li>
           </ul>
         </div>
         <div>
