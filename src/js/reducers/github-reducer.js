@@ -1,4 +1,4 @@
-export const DISPLAY_REPOS = 'DISPLAY_REPOS';
+import { DISPLAY_REPOS } from '../constants/github-action-types';
 
 export function repos(state = [], action) {
   switch (action.type) {
