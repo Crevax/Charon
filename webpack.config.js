@@ -3,7 +3,7 @@ var webpack = require('webpack');
 module.exports = {
   entry: {
     app: './src/js/app.jsx',
-    vendors: ['react', 'react-dom', 'react-router', 'redux', 'redux-thunk', 'es6-promise-polyfill']
+    vendors: ['react', 'react-dom', 'react-router', 'redux', 'redux-thunk', 'es6-promise']
   },
   output: {
     path: './public/js/',
