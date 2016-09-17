@@ -4,8 +4,7 @@ import { Provider } from 'react-redux';
 import { Router, Route, browserHistory, IndexRoute } from 'react-router';
 import styles from '../styles'; // eslint-disable-line no-unused-vars
 
-import MainNavigation from './containers/MainNavigation';
-import LibraryNavigation from './containers/LibraryNavigation';
+import { MainNavigation, LibraryNavigation } from './containers';
 import Home from './pages/Home';
 import Portfolio from './pages/Portfolio';
 import Library from './pages/Library';

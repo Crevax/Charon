@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { ROUTE_STATES } from '../constants/route-states';
 import { setRouteState } from '../actions/route-actions';
 
-import AuthorList from '../containers/AuthorList';
+import { AuthorList } from '../containers';
 
 class Author extends React.Component {
   constructor(props) {
