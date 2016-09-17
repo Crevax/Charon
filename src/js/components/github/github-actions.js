@@ -1,5 +1,5 @@
-import { GET_REPOS, DISPLAY_REPOS } from '../constants/github-action-types';
-import { fetchResource, resourceFetchSucceeded, resourceFetchFailed } from './resource-actions';
+import { GET_REPOS, DISPLAY_REPOS } from './github-action-types';
+import { fetchResource, resourceFetchSucceeded, resourceFetchFailed } from '../../actions/resource-actions';
 import request from 'superagent';
 
 export function displayRepos(repos) {

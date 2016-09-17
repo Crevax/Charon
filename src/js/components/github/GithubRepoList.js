@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { getAllReposForUser } from '../actions/github-actions';
+import { getAllReposForUser } from './github-actions';
 
 class GithubRepoList extends React.Component {
   constructor(props) {

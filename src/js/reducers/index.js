@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux';
 import { routeState } from './route-reducer';
-import { repos } from './github-reducer';
+import { repos } from '../components/github';
 import { authors } from './author-reducer';
 
 const rootReducer = combineReducers({
