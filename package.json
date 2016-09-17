@@ -1,6 +1,8 @@
 {
   "name": "cjdavis.charon",
   "description": "front end task runner for bundling and building the ui of my personal website",
+  "version": "0.0.1",
+  "license": "MIT",
   "scripts": {
     "dev-server": "webpack-dev-server --inline --hot --progress --colors --content-base",
     "dev": "webpack --progress --colors --watch",
