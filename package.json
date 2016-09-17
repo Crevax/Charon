@@ -27,6 +27,7 @@
   "scripts": {
     "dev-server": "webpack-dev-server --inline --hot --progress --colors --content-base",
     "dev": "webpack --progress --colors --watch",
+    "build": "webpack --progress --colors",
     "lint": "eslint --ignore-path .gitignore . --ext .js --ext .jsx || true"
   }
 }
