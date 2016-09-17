@@ -12,8 +12,8 @@ class LibraryNavigation extends React.Component {
       <div>
         <div>
           <ul>
-            <li><Link to='author'>Authors</Link></li>
-            <li><Link to='book'>Books</Link></li>
+            <li><Link to='library/author'>Authors</Link></li>
+            <li><Link to='library/book'>Books</Link></li>
           </ul>
         </div>
         <div>
