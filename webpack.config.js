@@ -1,20 +1,21 @@
 var webpack = require('webpack');
 
-module.exports = {
+var config = {
   entry: {
     app: './src/js/app.jsx',
     vendors: ['react', 'react-dom', 'react-router', 'redux', 'redux-thunk', 'es6-promise']
   },
   output: {
-    path: './public/js/',
-    publicPath: '/js/',
-    filename: 'app.js'
+    publicPath: '/',
+    path: __dirname + '/public',
+    filename: 'js/app.js'
   },
   module: {
     preLoaders: [
       {
         test: /\.jsx?$/,
-        loaders: ['eslint']
+        loaders: ['eslint'],
+        exclude: /node_modules/
       }
     ],
     loaders: [
@@ -26,7 +27,7 @@ module.exports = {
           cacheDirectory: true,
           presets: ['react', 'es2015']
         }
-      }
+      },
     ]
   },
   resolve: {
@@ -45,10 +46,26 @@ module.exports = {
     }
   },
   plugins: [
-    new webpack.optimize.CommonsChunkPlugin('vendors', 'vendors.js'),
-    new webpack.optimize.UglifyJsPlugin({
-      sourceMap: true,
-      minimize: true
-    })
+    new webpack.optimize.CommonsChunkPlugin('vendors', 'js/vendors.js')
   ]
 };
+
+switch (lifecycleEvent) {
+  case 'build':
+    config.plugins.push(new webpack.optimize.UglifyJsPlugin({
+      compress: {warnings: false},
+      sourceMap: true,
+      minimize: true
+    }));
+
+    config.plugins.push(new webpack.DefinePlugin({
+      'process.env.NODE_ENV': '"production"'
+    }));
+    break;
+  default:
+    config.plugins.push(new webpack.DefinePlugin({
+      'process.env.NODE_ENV': '"development"'
+    }));
+}
+
+module.exports = config;
