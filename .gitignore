@@ -5,7 +5,7 @@
 node_modules
 
 # Built Files
-dist
+public/js
 
 # Logs
 *.log

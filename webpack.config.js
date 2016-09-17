@@ -6,7 +6,7 @@ module.exports = {
     vendors: ['react', 'react-dom', 'react-router', 'redux', 'redux-thunk', 'es6-promise-polyfill']
   },
   output: {
-    path: './dist/js/',
+    path: './public/js/',
     publicPath: '/js/',
     filename: 'app.js'
   },
