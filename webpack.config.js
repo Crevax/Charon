@@ -1,4 +1,8 @@
 var webpack = require('webpack');
+var ExtractTextWebpackPlugin = require("extract-text-webpack-plugin");
+
+var cssExtractor = new ExtractTextWebpackPlugin('styles/main.min.css');
+var lifecycleEvent = process.env.npm_lifecycle_event;
 
 var config = {
   entry: {
@@ -52,6 +56,13 @@ var config = {
 
 switch (lifecycleEvent) {
   case 'build':
+    config.module.loaders.push({
+      test: /\.css$/,
+      loader: cssExtractor.extract(['css']),
+      exclude: '/node_modules/'
+    });
+
+    config.plugins.push(cssExtractor);
     config.plugins.push(new webpack.optimize.UglifyJsPlugin({
       compress: {warnings: false},
       sourceMap: true,
@@ -63,6 +74,12 @@ switch (lifecycleEvent) {
     }));
     break;
   default:
+    config.module.loaders.push({
+      test: /\.css$/,
+      loaders: ['style', 'css'],
+      exclude: '/node_modules/'
+    });
+
     config.plugins.push(new webpack.DefinePlugin({
       'process.env.NODE_ENV': '"development"'
     }));

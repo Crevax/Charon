@@ -6,6 +6,7 @@ node_modules
 
 # Built Files
 public/js
+public/styles
 
 # Logs
 *.log
