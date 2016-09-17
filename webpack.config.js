@@ -34,7 +34,15 @@ module.exports = {
   },
   devServer: {
     historyApiFallback: true,
-    contentBase: './public'
+    contentBase: './public',
+    proxy: {
+    '/api': {
+        target: 'http://api.cjdavis.me',
+        pathRewrite: {'^/api' : ''},
+        xfwd: true,
+        changeOrigin: true
+      }
+    }
   },
   plugins: [
     new webpack.optimize.CommonsChunkPlugin('vendors', 'vendors.js'),
