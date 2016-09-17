@@ -28,29 +28,5 @@
     "dev-server": "webpack-dev-server --inline --hot --progress --colors --content-base",
     "dev": "webpack --progress --colors --watch",
     "lint": "eslint --ignore-path .gitignore . --ext .js --ext .jsx || true"
-  },
-  "eslintConfig": {
-    "extends": "eslint:recommended",
-    "parserOptions": {
-      "ecmaVersion": 6,
-      "ecmaFeatures": {
-        "jsx": true
-      },
-      "sourceType": "module"
-    },
-    "env": {
-      "browser": true,
-      "node": true
-    },
-    "plugins": [
-      "react"
-    ],
-    "rules": {
-      "no-console": 1,
-      "jsx-quotes": [1, "prefer-single"],
-      "react/jsx-no-undef": 1,
-      "react/jsx-uses-react": 1,
-      "react/jsx-uses-vars": 1
-    }
   }
 }
