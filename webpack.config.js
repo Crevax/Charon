@@ -7,7 +7,7 @@ var lifecycleEvent = process.env.npm_lifecycle_event;
 var config = {
   entry: {
     app: './src/js/app.jsx',
-    vendors: ['react', 'react-dom', 'react-router', 'redux', 'redux-thunk', 'es6-promise']
+    vendors: ['react', 'react-dom', 'react-router', 'redux', 'redux-thunk', 'es6-promise', 'superagent']
   },
   output: {
     publicPath: '/',
