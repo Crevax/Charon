@@ -10,3 +10,6 @@ public/styles
 
 # Logs
 *.log
+
+# ENV Configuration
+.env

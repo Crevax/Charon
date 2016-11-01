@@ -1,5 +1,6 @@
 var webpack = require('webpack');
 var ExtractTextWebpackPlugin = require("extract-text-webpack-plugin");
+require('dotenv').config({silent: true});
 
 var cssExtractor = new ExtractTextWebpackPlugin('styles/main.min.css');
 var lifecycleEvent = process.env.npm_lifecycle_event;
@@ -42,7 +43,7 @@ var config = {
     contentBase: './public',
     proxy: {
     '/api': {
-        target: 'http://api.cjdavis.me',
+        target: process.env.API_HOST,
         pathRewrite: {'^/api' : ''},
         xfwd: true,
         changeOrigin: true
