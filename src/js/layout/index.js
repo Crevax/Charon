@@ -1,7 +1,7 @@
 import LibraryNavigation from './LibraryNavigation';
-import MainNavigation from './MainNavigation';
+import BaseLayout from './BaseLayout';
 
 export {
   LibraryNavigation,
-  MainNavigation
+  BaseLayout
 }
