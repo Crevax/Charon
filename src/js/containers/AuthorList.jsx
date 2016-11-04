@@ -1,7 +1,25 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import request from 'superagent';
 import { ROUTE_STATES, setRouteState } from '../components/routing';
-import { getAllAuthors } from '../components/library';
+import { GET_ALL_AUTHORS, displayAuthors } from '../components/library';
+import { fetchResource, resourceFetchSucceeded, resourceFetchFailed } from '../resource-manager';
+
+function getAllAuthors() {
+  return dispatch => {
+    dispatch(fetchResource(GET_ALL_AUTHORS));
+    request.get('/api/author')
+      .end((err, res) => {
+        if (err || !res.ok) {
+          dispatch(resourceFetchFailed(GET_ALL_AUTHORS, err));
+        } else {
+          dispatch(displayAuthors(res.body));
+          dispatch(resourceFetchSucceeded(GET_ALL_AUTHORS));
+        }
+      });
+  }
+}
+
 
 class AuthorList extends React.Component {
   constructor(props) {

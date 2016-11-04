@@ -1,7 +1,7 @@
 import { authors } from './author-reducer';
-import { getAllAuthors } from './author-actions';
+import { displayAuthors } from './author-actions';
 
 export {
   authors,
-  getAllAuthors
+  displayAuthors
 }
