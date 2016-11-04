@@ -1,5 +1,5 @@
 import { BUSY, COMPLETE, INACTIVE, ERROR } from '../constants/app-constants';
-import { FETCH_RESOURCE, RESOURCE_FETCH_SUCCEEDED, RESOURCE_FETCH_FAILED} from '../constants/resources';
+import { FETCH_RESOURCE, RESOURCE_FETCH_SUCCEEDED, RESOURCE_FETCH_FAILED } from './resources';
 
 export function fetchResource(type = '') {
   return {

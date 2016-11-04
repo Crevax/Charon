@@ -1,5 +1,5 @@
 import { GET_ALL_AUTHORS, DISPLAY_AUTHORS } from './author-action-types';
-import { fetchResource, resourceFetchSucceeded, resourceFetchFailed } from '../../actions/resource-actions';
+import { fetchResource, resourceFetchSucceeded, resourceFetchFailed } from '../../resource-manager';
 import request from 'superagent';
 
 export function displayAuthors(authors) {
