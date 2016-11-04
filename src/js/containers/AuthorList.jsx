@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { getAllAuthors } from '../actions/author-actions';
+import { getAllAuthors } from '../components/library';
 
 class AuthorList extends React.Component {
   constructor(props) {

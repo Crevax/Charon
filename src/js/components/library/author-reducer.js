@@ -1,4 +1,4 @@
-import { DISPLAY_AUTHORS } from '../constants/author-action-types';
+import { DISPLAY_AUTHORS } from './author-action-types';
 
 export function authors(state = [], action) {
   switch (action.type) {

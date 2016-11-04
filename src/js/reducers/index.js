@@ -1,7 +1,7 @@
 import { combineReducers } from 'redux';
 import { routeState } from './route-reducer';
 import { repos } from '../components/github';
-import { authors } from './author-reducer';
+import { authors } from '../components/library';
 
 const rootReducer = combineReducers({
   routeState,
