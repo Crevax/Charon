@@ -1,4 +1,4 @@
-import { ROUTE_CHANGE, ROUTE_STATES } from '../constants/route-states';
+import { ROUTE_CHANGE, ROUTE_STATES } from './route-states';
 
 export function routeState(state = ROUTE_STATES.HOME, action) {
   switch (action.type) {

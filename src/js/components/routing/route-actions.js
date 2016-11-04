@@ -1,4 +1,4 @@
-import { ROUTE_CHANGE } from '../constants/route-states'
+import { ROUTE_CHANGE } from './route-states'
 
 export function setRouteState(route) {
   return {
