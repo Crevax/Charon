@@ -5,7 +5,7 @@ import { Router, Route, browserHistory, IndexRoute } from 'react-router';
 import styles from '../styles'; // eslint-disable-line no-unused-vars
 
 import { BaseLayout, LibraryNavigation } from './layout';
-import { Intro, Portfolio, Library, Author } from './containers';
+import { Intro, Portfolio, Library, AuthorList } from './containers';
 
 import store from './store';
 
@@ -17,7 +17,7 @@ render((
         <Route path='portfolio' component={Portfolio} />
         <Route path='library' component={LibraryNavigation}>
           <IndexRoute component={Library} />
-          <Route path='author' component={Author} />
+          <Route path='author' component={AuthorList} />
         </Route>
       </Route>
     </Router>

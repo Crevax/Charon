@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { ROUTE_STATES, setRouteState } from '../components/routing';
 import { getAllAuthors } from '../components/library';
 
 class AuthorList extends React.Component {
@@ -8,6 +9,7 @@ class AuthorList extends React.Component {
   }
 
   componentWillMount() {
+    this.props.dispatch(setRouteState(ROUTE_STATES.AUTHOR));
     this.props.dispatch(getAllAuthors());
   }
 
@@ -32,6 +34,7 @@ class AuthorList extends React.Component {
 
 function select(state) {
   return {
+    routeState: state.RouteState,
     authors: state.authors
   }
 }
