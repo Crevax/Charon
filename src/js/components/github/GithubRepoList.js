@@ -1,6 +1,24 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { getAllReposForUser } from './github-actions';
+import request from 'superagent';
+import { displayRepos } from './github-actions';
+import { GET_REPOS } from './github-action-types';
+import { fetchResource, resourceFetchSucceeded, resourceFetchFailed } from '../../resource-manager';
+
+const getAllReposForUser = (user) => {
+  return dispatch => {
+    dispatch(fetchResource(GET_REPOS));
+    request.get(`https://api.github.com/users/${user}/repos`)
+      .end((err, res) => {
+        if (err || !res.ok) {
+          dispatch(resourceFetchFailed(GET_REPOS, err));
+        } else {
+          dispatch(displayRepos(res.body));
+          dispatch(resourceFetchSucceeded(GET_REPOS));
+        }
+      });
+  }
+};
 
 class GithubRepoList extends React.Component {
   constructor(props) {
