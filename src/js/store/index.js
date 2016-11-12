@@ -4,11 +4,13 @@ import createLogger from 'redux-logger';
 import { routeState } from '../components/routing';
 import { repos } from '../components/github';
 import { authors } from '../components/library';
+import { resourceFetchStatus } from '../resource-manager';
 
 const rootReducer = combineReducers({
   routeState,
   repos,
-  authors
+  authors,
+  resourceFetchStatus
 });
 
 const configureStore = () => {

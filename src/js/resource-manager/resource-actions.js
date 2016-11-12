@@ -10,11 +10,12 @@ export function fetchResource(type = '') {
   }
 }
 
-export function resetFetchState() {
+export function resetFetchState(type) {
   return {
     type: FETCH_RESOURCE,
     progress: INACTIVE,
-    message: ''
+    message: '',
+    fetchType: type
   }
 }
 
@@ -39,13 +40,13 @@ export function fetchFailed(type, message) {
 export function resourceFetchSucceeded(type = '') {
   return dispatch => {
     dispatch(fetchSucceeded(type));
-    dispatch(resetFetchState());
+    dispatch(resetFetchState(type));
   }
 }
 
 export function resourceFetchFailed(type = '', message) {
   return dispatch => {
     dispatch(fetchFailed(type, message));
-    dispatch(resetFetchState());
+    dispatch(resetFetchState(type));
   }
 }
