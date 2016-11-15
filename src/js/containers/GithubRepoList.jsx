@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import request from 'superagent';
 import { displayRepos , GET_REPOS } from '../components/github';
 import { fetchResource, resourceFetchSucceeded, resourceFetchFailed } from '../resource-manager';
+import { Loader } from '../components/animation';
 
 const getAllReposForUser = (user) => {
   return dispatch => {
@@ -29,6 +30,11 @@ class GithubRepoList extends React.Component {
   }
 
   render() {
+    if (!this.props.resourceFetchStatus.hasOwnProperty(GET_REPOS)
+      || this.props.resourceFetchStatus[GET_REPOS].progress === "BUSY")
+    {
+      return <Loader />
+    }
     let repos = this.props.repos.map((repo, idx) => {
       return (
         <div key={idx}>
@@ -48,7 +54,8 @@ class GithubRepoList extends React.Component {
 
 function select(state) {
   return {
-    repos: state.repos
+    repos: state.repos,
+    resourceFetchStatus: state.resourceFetchStatus
   }
 }
 
