@@ -43,7 +43,7 @@ var config = {
     contentBase: './public',
     proxy: {
     '/api': {
-        target: process.env.API_HOST,
+        target: process.env.API_HOST || 'localhost',
         pathRewrite: {'^/api' : ''},
         xfwd: true,
         changeOrigin: true
