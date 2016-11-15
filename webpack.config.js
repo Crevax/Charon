@@ -40,7 +40,7 @@ var config = {
   },
   devServer: {
     historyApiFallback: true,
-    contentBase: './public',
+    contentBase: __dirname + '/public',
     proxy: {
     '/api': {
         target: process.env.API_HOST || 'localhost',
