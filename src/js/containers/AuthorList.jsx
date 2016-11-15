@@ -32,6 +32,11 @@ class AuthorList extends React.Component {
   }
 
   render() {
+    if (!this.props.resourceFetchStatus.hasOwnProperty(authorActionTypes.GET_ALL_AUTHORS)
+      || this.props.resourceFetchStatus[authorActionTypes.GET_ALL_AUTHORS].progress === "BUSY")
+    {
+      return <div>Loading...</div>
+    }
     let authors = this.props.authors.map((author, idx) => {
       return (
         <div key={idx}>
@@ -53,7 +58,8 @@ class AuthorList extends React.Component {
 function select(state) {
   return {
     routeState: state.RouteState,
-    authors: state.authors
+    authors: state.authors,
+    resourceFetchStatus: state.resourceFetchStatus
   }
 }
 
