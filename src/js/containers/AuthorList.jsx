@@ -2,19 +2,19 @@ import React from 'react';
 import { connect } from 'react-redux';
 import request from 'superagent';
 import { ROUTE_STATES, setRouteState } from '../components/routing';
-import { GET_ALL_AUTHORS, displayAuthors } from '../components/library';
+import { displayAuthors, authorActionTypes } from '../components/library';
 import { fetchResource, resourceFetchSucceeded, resourceFetchFailed } from '../resource-manager';
 
 function getAllAuthors() {
   return dispatch => {
-    dispatch(fetchResource(GET_ALL_AUTHORS));
+    dispatch(fetchResource(authorActionTypes.GET_ALL_AUTHORS));
     request.get('/api/author')
       .end((err, res) => {
         if (err || !res.ok) {
-          dispatch(resourceFetchFailed(GET_ALL_AUTHORS, err));
+          dispatch(resourceFetchFailed(authorActionTypes.GET_ALL_AUTHORS, err));
         } else {
           dispatch(displayAuthors(res.body));
-          dispatch(resourceFetchSucceeded(GET_ALL_AUTHORS));
+          dispatch(resourceFetchSucceeded(authorActionTypes.GET_ALL_AUTHORS));
         }
       });
   }
