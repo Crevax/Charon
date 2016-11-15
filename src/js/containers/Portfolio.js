@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { ROUTE_STATES, setRouteState } from '../components/routing';
-import { GithubRepoList } from '../components/github';
+import GithubRepoList from './GithubRepoList';
 
 class Portfolio extends React.Component {
   constructor(props) {

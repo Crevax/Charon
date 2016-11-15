@@ -1,9 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import request from 'superagent';
-import { displayRepos } from './github-actions';
-import { GET_REPOS } from './github-action-types';
-import { fetchResource, resourceFetchSucceeded, resourceFetchFailed } from '../../resource-manager';
+import { displayRepos , GET_REPOS } from '../components/github';
+import { fetchResource, resourceFetchSucceeded, resourceFetchFailed } from '../resource-manager';
 
 const getAllReposForUser = (user) => {
   return dispatch => {
