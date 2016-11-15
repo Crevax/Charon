@@ -4,7 +4,9 @@
  */
 
 import base from './base.css';
+import animation from './animation.css';
 
 export {
-  base
+  base,
+  animation
 }

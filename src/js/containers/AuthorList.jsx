@@ -4,6 +4,7 @@ import request from 'superagent';
 import { ROUTE_STATES, setRouteState } from '../components/routing';
 import { displayAuthors, authorActionTypes } from '../components/library';
 import { fetchResource, resourceFetchSucceeded, resourceFetchFailed } from '../resource-manager';
+import { Loader } from '../components/animation';
 
 function getAllAuthors() {
   return dispatch => {
@@ -35,7 +36,7 @@ class AuthorList extends React.Component {
     if (!this.props.resourceFetchStatus.hasOwnProperty(authorActionTypes.GET_ALL_AUTHORS)
       || this.props.resourceFetchStatus[authorActionTypes.GET_ALL_AUTHORS].progress === "BUSY")
     {
-      return <div>Loading...</div>
+      return <Loader />
     }
     let authors = this.props.authors.map((author, idx) => {
       return (
