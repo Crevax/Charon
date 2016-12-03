@@ -1,20 +1,20 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import request from 'superagent';
-import { displayRepos , GET_REPOS } from '../components/github';
+import { displayRepos , githubActionTypes } from '../components/github';
 import { fetchResource, resourceFetchSucceeded, resourceFetchFailed } from '../resource-manager';
 import { Loader } from '../components/animation';
 
 const getAllReposForUser = (user) => {
   return dispatch => {
-    dispatch(fetchResource(GET_REPOS));
+    dispatch(fetchResource(githubActionTypes.GET_REPOS));
     request.get(`https://api.github.com/users/${user}/repos`)
       .end((err, res) => {
         if (err || !res.ok) {
-          dispatch(resourceFetchFailed(GET_REPOS, err));
+          dispatch(resourceFetchFailed(githubActionTypes.GET_REPOS, err));
         } else {
           dispatch(displayRepos(res.body));
-          dispatch(resourceFetchSucceeded(GET_REPOS));
+          dispatch(resourceFetchSucceeded(githubActionTypes.GET_REPOS));
         }
       });
   }
@@ -30,8 +30,8 @@ class GithubRepoList extends React.Component {
   }
 
   render() {
-    if (!this.props.resourceFetchStatus.hasOwnProperty(GET_REPOS)
-      || this.props.resourceFetchStatus[GET_REPOS].progress === "BUSY")
+    if (!this.props.resourceFetchStatus.hasOwnProperty(githubActionTypes.GET_REPOS)
+      || this.props.resourceFetchStatus[githubActionTypes.GET_REPOS].progress === "BUSY")
     {
       return <Loader />
     }
