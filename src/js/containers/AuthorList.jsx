@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import request from 'superagent';
 import { ROUTE_STATES, setRouteState } from '../components/routing';
-import { displayAuthors, authorActionTypes } from '../components/library';
+import { displayAuthors, authorActionTypes, AuthorSummary } from '../components/library';
 import { fetchResource, resourceFetchSucceeded, resourceFetchFailed } from '../resource-manager';
 import { Loader } from '../components/animation';
 
@@ -41,7 +41,7 @@ class AuthorList extends React.Component {
     let authors = this.props.authors.map((author, idx) => {
       return (
         <div key={idx}>
-          <h3>{ author.FirstName } { author.LastName }</h3>
+          <AuthorSummary author={author} />
         </div>
       )
     });

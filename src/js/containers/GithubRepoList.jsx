@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import request from 'superagent';
-import { displayRepos , githubActionTypes } from '../components/github';
+import { displayRepos , githubActionTypes, GithubRepoSummary } from '../components/github';
 import { fetchResource, resourceFetchSucceeded, resourceFetchFailed } from '../resource-manager';
 import { Loader } from '../components/animation';
 
@@ -38,7 +38,7 @@ class GithubRepoList extends React.Component {
     let repos = this.props.repos.map((repo, idx) => {
       return (
         <div key={idx}>
-          <h3>{ repo.name }</h3>
+          <GithubRepoSummary repo={repo} />
         </div>
       )
     });
