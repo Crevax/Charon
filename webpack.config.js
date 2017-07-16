@@ -7,7 +7,7 @@ var lifecycleEvent = process.env.npm_lifecycle_event;
 
 var config = {
   entry: {
-    app: './src/js/app.jsx',
+    app: './src/js/app.tsx',
     vendors: ['react', 'react-dom', 'react-router', 'redux', 'redux-thunk', 'es6-promise', 'superagent']
   },
   output: {
@@ -33,10 +33,19 @@ var config = {
           presets: ['react', 'es2015']
         }
       },
+      {
+        test: /\.tsx?$/,
+        exclude: '/node_modules/',
+        loader: "awesome-typescript-loader"
+      },
+    ],
+    rules: [
+      // All output '.js' files will have any sourcemaps re-processed by 'source-map-loader'.
+      { enforce: "pre", test: /\.js$/, loader: "source-map-loader" }
     ]
   },
   resolve: {
-    extensions: ['', '.js', '.jsx']
+    extensions: ['', '.js', '.jsx', '.ts', '.tsx']
   },
   devServer: {
     historyApiFallback: true,
