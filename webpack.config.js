@@ -16,14 +16,13 @@ var config = {
     filename: 'js/app.js'
   },
   module: {
-    preLoaders: [
+    rules: [
       {
         test: /\.jsx?$/,
+        enforce: 'pre',
         loaders: ['eslint'],
         exclude: /node_modules/
-      }
-    ],
-    loaders: [
+      },
       {
         test: /\.jsx?$/,
         loader: 'babel',
@@ -45,7 +44,7 @@ var config = {
     ]
   },
   resolve: {
-    extensions: ['', '.js', '.jsx', '.ts', '.tsx']
+    extensions: ['.js', '.jsx', '.ts', '.tsx']
   },
   devServer: {
     historyApiFallback: true,
@@ -60,13 +59,13 @@ var config = {
     }
   },
   plugins: [
-    new webpack.optimize.CommonsChunkPlugin('vendors', 'js/vendors.js')
+    new webpack.optimize.CommonsChunkPlugin({ name: 'vendors', filename: 'js/vendors.js' })
   ]
 };
 
 switch (lifecycleEvent) {
   case 'build':
-    config.module.loaders.push({
+    config.module.rules.push({
       test: /\.css$/,
       loader: cssExtractor.extract(['css']),
       exclude: '/node_modules/'
@@ -84,7 +83,7 @@ switch (lifecycleEvent) {
     }));
     break;
   default:
-    config.module.loaders.push({
+    config.module.rules.push({
       test: /\.css$/,
       loaders: ['style', 'css'],
       exclude: '/node_modules/'
