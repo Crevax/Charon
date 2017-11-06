@@ -20,12 +20,12 @@ var config = {
       {
         test: /\.jsx?$/,
         enforce: 'pre',
-        loaders: ['eslint'],
+        loaders: ['eslint-loader', 'source-map-loader'],
         exclude: /node_modules/
       },
       {
         test: /\.jsx?$/,
-        loader: 'babel',
+        loader: 'babel-loader',
         exclude: '/node_modules/',
         query: {
           cacheDirectory: true,
@@ -37,10 +37,6 @@ var config = {
         exclude: '/node_modules/',
         loader: "awesome-typescript-loader"
       },
-    ],
-    rules: [
-      // All output '.js' files will have any sourcemaps re-processed by 'source-map-loader'.
-      { enforce: "pre", test: /\.js$/, loader: "source-map-loader" }
     ]
   },
   resolve: {
