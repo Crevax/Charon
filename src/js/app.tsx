@@ -12,7 +12,7 @@ import store from './store';
 
 render((
   <Provider store={store} >
-    <BrowserRouter basename={process.env.BASE_NAME}>
+    <BrowserRouter basename="/">
       <div className="app">
         <MainNavigation />
         <Route path="/" exact component={Intro} />

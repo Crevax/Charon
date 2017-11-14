@@ -7,9 +7,10 @@ import { fetchResource, resourceFetchSucceeded, resourceFetchFailed } from '../r
 import { Loader } from '../components/animation';
 
 function getAllAuthors() {
+
   return dispatch => {
     dispatch(fetchResource(authorActionTypes.GET_ALL_AUTHORS));
-    request.get('/api/author')
+    request.get(`${process.env.API_HOST}/author`)
       .end((err, res) => {
         if (err || !res.ok) {
           dispatch(resourceFetchFailed(authorActionTypes.GET_ALL_AUTHORS, err));

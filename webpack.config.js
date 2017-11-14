@@ -76,7 +76,8 @@ switch (lifecycleEvent) {
 
     config.plugins.push(new webpack.DefinePlugin({
       'process.env.NODE_ENV': '"production"',
-      'process.env.BASE_NAME': process.env.BASE_NAME || '',
+      'process.env.BASE_NAME': JSON.stringify(process.env.BASE_NAME || '/'),
+      'process.env.API_HOST': JSON.stringify(process.env.API_HOST || '/api'),
     }));
     break;
   default:
@@ -87,7 +88,9 @@ switch (lifecycleEvent) {
     });
 
     config.plugins.push(new webpack.DefinePlugin({
-      'process.env.NODE_ENV': '"development"'
+      'process.env.NODE_ENV': '"development"',
+      'process.env.BASE_NAME': '/',
+      'process.env.API_HOST': '"/api"'
     }));
 }
 
