@@ -28,7 +28,7 @@ after_success: >
     # Delete current repo information
     rm -rf .git ;
     # Rebuild repo with distribution assets only and push to GitHub pages
-    cd dist ;
+    cd public ;
     git init ;
     git add . ;
     git commit -m "Deploy Travis CI build $TRAVIS_BUILD_NUMBER to GitHub Pages" ;
