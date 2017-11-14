@@ -1,13 +1,13 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 const LibraryNavigation = (props) => {
   return (
     <div>
       <div>
         <ul>
-          <li><Link to='/library/author'>Authors</Link></li>
-          <li><Link to='/library/book'>Books</Link></li>
+          <li><NavLink to='/library/author'>Authors</NavLink></li>
+          <li><NavLink to='/library/book'>Books</NavLink></li>
         </ul>
       </div>
       <div>
