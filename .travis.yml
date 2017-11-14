@@ -1,0 +1,41 @@
+language: node_js
+node_js:
+  - "8.5.0"
+cache:
+  directories:
+    - node_modules
+before_cache:
+  - rm -rf node_modules/* # force modules to refresh
+
+branches:
+  except:
+    - gh-pages
+
+install:
+  - make install
+
+script:
+  - make build
+
+after_success: >
+  echo $TRAVIS_BRANCH; echo $TRAVIS_PULL_REQUEST;
+  if [[ $TRAVIS_BRANCH == 'master' && $TRAVIS_PULL_REQUEST == 'false' ]]; then
+    # Generate distribution assets
+    make build ;
+    # Configure Git with Travis CI infomraiton
+    git config --global user.email "travis@travis-ci.org" ;
+    git config --global user.name "travis-ci" ;
+    # Delete current repo information
+    rm -rf .git ;
+    # Rebuild repo with distribution assets only and push to GitHub pages
+    cd dist ;
+    git init ;
+    git add . ;
+    git commit -m "Deploy Travis CI build $TRAVIS_BUILD_NUMBER to GitHub Pages" ;
+    git push -f https://${GH_TOKEN}@github.com/${TRAVIS_REPO_SLUG} master:gh-pages ;
+  fi
+
+notifications:
+  email:
+    on_success: never
+    on_failure: change
