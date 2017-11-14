@@ -63,7 +63,7 @@ switch (lifecycleEvent) {
   case 'build':
     config.module.rules.push({
       test: /\.css$/,
-      loader: cssExtractor.extract(['css']),
+      loader: cssExtractor.extract(['css-loader']),
       exclude: '/node_modules/'
     });
 
@@ -81,7 +81,7 @@ switch (lifecycleEvent) {
   default:
     config.module.rules.push({
       test: /\.css$/,
-      loaders: ['style', 'css'],
+      loaders: ['style-loader', 'css-loader'],
       exclude: '/node_modules/'
     });
 
