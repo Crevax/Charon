@@ -4,6 +4,7 @@
   "version": "0.0.1",
   "license": "MIT",
   "scripts": {
+    "start": "npm run dev-server",
     "dev-server": "webpack-dev-server --inline --hot --progress --colors --content-base",
     "dev": "webpack --progress --colors --watch",
     "build": "webpack --progress --colors",
