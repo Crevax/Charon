@@ -2,7 +2,6 @@ var webpack = require('webpack');
 var ExtractTextWebpackPlugin = require("extract-text-webpack-plugin");
 require('dotenv').config({silent: true});
 
-var cssExtractor = new ExtractTextWebpackPlugin('styles/main.min.css');
 var lifecycleEvent = process.env.npm_lifecycle_event;
 
 var config = {
@@ -63,11 +62,18 @@ switch (lifecycleEvent) {
   case 'build':
     config.module.rules.push({
       test: /\.css$/,
-      loader: cssExtractor.extract(['css-loader']),
+      loader: ExtractTextWebpackPlugin.extract(
+        {
+          fallback: 'style-loader',
+          use: 'css-loader'
+        }
+      ),
       exclude: '/node_modules/'
     });
 
-    config.plugins.push(cssExtractor);
+    config.plugins.push(new ExtractTextWebpackPlugin({
+      filename: 'styles/[name].min.css'
+    }));
     config.plugins.push(new webpack.optimize.UglifyJsPlugin({
       compress: {warnings: false},
       sourceMap: true,

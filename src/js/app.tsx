@@ -2,7 +2,7 @@ import * as React from 'react';
 import { render } from 'react-dom';
 import { Provider } from 'react-redux';
 import { BrowserRouter, Route } from 'react-router-dom';
-import * as styles from '../styles'; // eslint-disable-line no-unused-vars
+import '../styles/app.css'; // eslint-disable-line no-unused-vars
 
 import { MainNavigation } from './layout';
 import { Intro, Portfolio } from './containers';

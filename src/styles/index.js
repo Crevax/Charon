@@ -3,10 +3,4 @@
  * and won't (and shouldn't) be included in production
  */
 
-import base from './base.css';
-import animation from './animation.css';
-
-export {
-  base,
-  animation
-}
+export {default as styles} from'./app.css';
