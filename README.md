@@ -1,9 +1,7 @@
-=======
-Elysium
-=======
+# Charon
 
-The code for my personal website.
+The front-end of my personal website.
 
 ## TODO:
-* Refactor app to support latest package versions
-* Convert to typescript
+
+* Build profile information from Github's GraphQL API.
