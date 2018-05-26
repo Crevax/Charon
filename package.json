@@ -7,7 +7,7 @@
     "start": "npm run dev-server",
     "dev-server": "webpack-dev-server --inline --hot --progress --colors --content-base",
     "dev": "webpack --progress --colors --watch",
-    "build": "cross-env NODE_ENV=production --progress --colors"
+    "build": "cross-env NODE_ENV=production webpack --progress --colors"
   },
   "devDependencies": {
     "@types/clean-webpack-plugin": "^0.1.2",
