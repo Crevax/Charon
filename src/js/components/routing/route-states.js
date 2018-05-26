@@ -1,8 +1,0 @@
-export const ROUTE_STATES = {
-  HOME: 'HOME',
-  PORTFOLIO: 'PORTFOLIO',
-  LIBRARY: 'LIBRARY',
-  AUTHOR: 'AUTHOR'
-};
-
-export const ROUTE_CHANGE = 'ROUTE_CHANGE'

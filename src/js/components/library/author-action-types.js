@@ -1,2 +1,0 @@
-export const GET_ALL_AUTHORS = 'GET_ALL_AUTHORS';
-export const DISPLAY_AUTHORS = 'DISPLAY_AUTHORS';
